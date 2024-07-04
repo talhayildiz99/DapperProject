@@ -25,6 +25,12 @@ namespace DapperProject.Controllers
             return View(values);
         }
 
+        public async Task<IActionResult> ProductListWithCategoryProcedure()
+        {
+            var values = await _productService.GetAllProductWithCategoryProcAsync();
+            return View(values);
+        }
+
         [HttpGet]
         public IActionResult CreateProduct()
         {
@@ -56,5 +62,12 @@ namespace DapperProject.Controllers
             await _productService.UpdateProductAsync(updateProductDto);
             return RedirectToAction("ProductList");
         }
+
+        public async Task<IActionResult> ProductCount()
+        {
+            int value = await _productService.GetProductCountAsync();
+            ViewBag.a = value;
+            return View();
+        } 
     }
 }

@@ -7,9 +7,11 @@ namespace DapperProject.Services.ProductServices
     {
         Task<List<ResultProductDto>> GetAllProductAsync();
         Task<List<ResultProductWithCategoryDto>> GetAllProductWithCategoryAsync();
+        Task<List<ResultProductWithCategoryDto>> GetAllProductWithCategoryProcAsync();
         Task CreateProductAsync(CreateProductDto createProductDto);
         Task DeleteProductAsync(int id);
         Task UpdateProductAsync(UpdateProductDto updateProductDto);
         Task<GetByIdProductDto> GetByIdProductAsync(int id);
+        Task<int> GetProductCountAsync();
     }
 }
